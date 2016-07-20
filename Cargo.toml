@@ -2,5 +2,7 @@
 name = "stable-heap"
 version = "0.1.0"
 authors = ["Carl Lerche <me@carllerche.com>"]
+description = "Heap allocation for stable Rust"
+license = "MIT"
 
 [dependencies]
