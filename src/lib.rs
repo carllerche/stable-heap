@@ -15,7 +15,7 @@ pub const EMPTY: *mut () = 0x1 as *mut ();
 /// size on the platform.
 #[inline]
 pub unsafe fn allocate(size: usize, align: usize) -> *mut u8 {
-    assert!(size & align == 0, "invalid allocate arguments; size={}; align={}", size, align);
+    assert!(size & (align - 1) == 0, "invalid allocate arguments; size={}; align={}", size, align);
 
     match align {
         1 => do_allocate::<u8>(size),
